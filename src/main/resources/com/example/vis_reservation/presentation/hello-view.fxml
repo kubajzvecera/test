@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/21"
+         xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="com.example.vis_reservation.presentation.ItemController">
+    <Tab text="Item">
+        <content>
+            <VBox spacing="10.0">
+                <padding>
+                    <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                </padding>
+
+                <Label text="Novy item" />
+                <GridPane hgap="10.0" vgap="8.0">
+                    <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                    <TextField fx:id="idField" promptText="1" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                    <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                    <TextField fx:id="nameField" promptText="Stul" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                    <Label text="Desc:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    <TextField fx:id="descField" promptText="Dreveny stul" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                    <Label text="Price:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="priceField" promptText="2499.90" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+
+                <Button onAction="#onSaveClick" text="Ulozit do DB" />
+                <Label fx:id="statusLabel" />
+                <Label text="Ulozene items:" />
+                <ListView fx:id="itemsList" prefHeight="220.0" />
+            </VBox>
+        </content>
+    </Tab>
+
+    <Tab text="Objednavka">
+        <content>
+            <fx:include fx:id="orderView" source="order-view.fxml" />
+        </content>
+    </Tab>
+</TabPane>

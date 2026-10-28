@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.vis_reservation.presentation.OrderController">
+    <padding>
+        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+    </padding>
+
+    <HBox spacing="15.0">
+        <VBox spacing="8.0">
+            <Label text="Objednavky" />
+            <TableView fx:id="ordersTable" prefHeight="240.0" prefWidth="320.0">
+                <columns>
+                    <TableColumn fx:id="orderIdColumn" prefWidth="60.0" text="ID" />
+                    <TableColumn fx:id="customerColumn" prefWidth="230.0" text="Zakaznik" />
+                </columns>
+            </TableView>
+        </VBox>
+
+        <VBox spacing="8.0">
+            <Label text="Polozky objednavky" />
+            <TableView fx:id="orderItemsTable" prefHeight="240.0" prefWidth="450.0">
+                <columns>
+                    <TableColumn fx:id="itemIdColumn" prefWidth="60.0" text="ID" />
+                    <TableColumn fx:id="itemNameColumn" prefWidth="130.0" text="Name" />
+                    <TableColumn fx:id="itemDescColumn" prefWidth="160.0" text="Desc" />
+                    <TableColumn fx:id="itemPriceColumn" prefWidth="90.0" text="Price" />
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+
+    <Label fx:id="statusLabel" />
+</VBox>
